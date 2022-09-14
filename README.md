@@ -1,6 +1,6 @@
-# hybrid_cnn Algorithm
+# False Positive Reduction Network Algorithm Container
 
 The source code for the algorithm container for
-hybrid_cnn, generated with
+False Positive Reduction Network, generated with
 evalutils version 0.3.1.
 
