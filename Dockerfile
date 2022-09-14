@@ -27,8 +27,10 @@ RUN mkdir -p /opt/algorithm/checkpoints/hybrid_cnn/
 # Store your weights in the container
 COPY --chown=algorithm:algorithm weights.zip /opt/algorithm/checkpoints/nnUNet/
 RUN python -c "import zipfile; zipfile.ZipFile('/opt/algorithm/checkpoints/nnUNet/weights.zip').extractall('/opt/algorithm/checkpoints/nnUNet/')"
-COPY --chown=algorithm:algorithm hybrid_weights.zip /opt/algorithm/checkpoints/
-RUN python -c "import zipfile; zipfile.ZipFile('/opt/algorithm/checkpoints/hybrid_weights.zip').extractall('/opt/algorithm/checkpoints/hybrid_cnn/')"
+COPY --chown=algorithm:algorithm hybrid_weights_1.zip /opt/algorithm/checkpoints/
+RUN python -c "import zipfile; zipfile.ZipFile('/opt/algorithm/checkpoints/hybrid_weights_1.zip').extractall('/opt/algorithm/checkpoints/hybrid_cnn/')"
+COPY --chown=algorithm:algorithm hybrid_weights_2.zip /opt/algorithm/checkpoints/
+RUN python -c "import zipfile; zipfile.ZipFile('/opt/algorithm/checkpoints/hybrid_weights_2.zip').extractall('/opt/algorithm/checkpoints/hybrid_cnn/')"
 
 # nnUNet specific setup
 RUN mkdir -p /opt/algorithm/nnUNet_raw_data_base/nnUNet_raw_data/Task504_Total_PET_Lesion_Only/imagesTs
